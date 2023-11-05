@@ -34,7 +34,11 @@ To run this project on your local machine, follow these simple steps:
 
 2. Install project dependencies:
 
+* npm install
+
 3. Start the project:
+
+* npm run dev
 
 You're all set! The project will be up and running, allowing you to explore the shopping cart and its powerful features.
 
