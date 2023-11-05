@@ -3,6 +3,7 @@ import Filter from './Filter'
 import '../App.css';
 import SingleProduct from './SingleProduct';
 import { useCart } from '../context/Context';
+import { BarWave } from "react-cssfx-loading"
 
 function Home() {
 
@@ -43,13 +44,21 @@ function Home() {
                 <Filter />
 
                 <div className="col-lg-8 ms-md-5 ms-lg-5 ms-xl-5 ms-sm-5 col-xl-8 col-md-7 col-sm-6 col-12">
-                    <div className="row justify-content-evenly">
-                        {
-                            transformProducts().map((prod) => (
-                                <SingleProduct prod={prod} key={prod.id} />
-                            ))
-                        }
-                    </div>
+                    {
+                        products.length > 0 ? (
+                            <div className="row justify-content-evenly">
+                                {
+                                    transformProducts().map((prod) => (
+                                        <SingleProduct prod={prod} key={prod.id} />
+                                    ))
+                                }
+                            </div>
+                        ) : (
+                            <div className='loading'>
+                                <BarWave width='60px'/>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </>
